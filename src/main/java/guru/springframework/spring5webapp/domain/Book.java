@@ -7,6 +7,19 @@ import java.util.Set;
 @Entity
 public class Book {
 
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
+
+
+
+    @ManyToOne
+    private Publisher publisher;
+
     public Book(){
 
     }
@@ -77,7 +90,6 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "authors=" + authors +
                 ", id=" + id +
                 ", title='" + title + '\'' +
                 ", isbn='" + isbn + '\'' +
